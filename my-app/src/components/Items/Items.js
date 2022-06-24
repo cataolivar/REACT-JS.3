@@ -1,24 +1,23 @@
 import React, { useState } from "react"
 import "./Items.css"
-import img1 from "../../assets/img/mediasCloud.PNG"
+import UseItems from "../hooks/UseItems";
 
-export const Items = () => {
 
-    const [amount,setAmount] = useState(0)
-    const [limit,setLimit] = useState (10)
-    const count = (value) => {
-        setAmount(amount+value)
-    }
+export const Items = ({stock,name,precio,img }) => {
+
+    const {count, amount} = UseItems(stock)
+
 
     return (
-        <section>
-            <h3>Nombre del producto</h3>
-            <img className="img1" src={img1} alt="medias"/>
-            <h4>Precio: $<span>200</span></h4>
+        <section className="itemImg">
+            <h3>{name}</h3>
+            <h4><span>${precio}</span></h4>
+            <img className="img1" src={img}alt="img" />
             <div className="divButton">
-                <button onCLick={()=>count(-1)}> - </button>
-                <button>{amount}</button>
-                <button onClick={()=>count(+1)}> + </button>
+                <button onClick={() => count(-1)}> - </button>
+                <span>{amount}</span>
+                <button onClick={() => count(+1)}> + </button>
+                <h5 className="h5Items" >{stock} unidades disponibles</h5>
             </div>
         </section>
     );
