@@ -1,14 +1,12 @@
-import React, { useState } from "react"
+import React from "react"
 import "./Items.css"
-import UseItems from "../hooks/UseItems";
+import {UseItems} from "../hooks/UseItems"
 
 
 export const Items = ({stock,name,precio,img }) => {
 
     const {count, amount} = UseItems(stock)
-
-
-    return (
+    return ( 
         <section className="itemImg">
             <h3>{name}</h3>
             <h4><span>${precio}</span></h4>
