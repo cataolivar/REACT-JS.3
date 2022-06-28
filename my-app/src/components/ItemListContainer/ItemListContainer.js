@@ -6,7 +6,7 @@ import UseItems from "../UseItems/UseItems";
 const ItemListContainer = ({greeting}) => {
 
     const onAdd = (cantidad) => {
-        console.log("Se agrego al carrito ${cantidad}")
+        console.log(`Se agrego al carrito ${cantidad}`);
     }
 
     return (
