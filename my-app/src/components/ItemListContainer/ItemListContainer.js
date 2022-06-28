@@ -13,8 +13,6 @@ const ItemListContainer = ({greeting}) => {
         <div>
             <span className= "greeting">{greeting}</span>
             <UseItems stock={10} initial={1} onAdd={onAdd}/>
-            <UseItems stock={10} initial={1} onAdd={onAdd}/>
-            <UseItems stock={10} initial={1} onAdd={onAdd}/>
         </div>
     );
 };
